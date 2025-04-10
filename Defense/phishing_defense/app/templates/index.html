@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Website Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 16px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #222;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        small {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        input[type="submit"] {
+            grid-column: span 2;
+            margin-top: 30px;
+            padding: 14px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004a99;
+        }
+
+        .result {
+            grid-column: span 2;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #eef;
+            border-left: 6px solid #0066cc;
+            border-radius: 8px;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+        }
+
+        .error { background-color: #ffe6e6; border-left: 6px solid #cc0000; }
+        .safe { background-color: #e6ffe6; border-left: 6px solid #00b300; }
+        .phishing { background-color: #fff0e6; border-left: 6px solid #ff6600; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Phishing Website Detector</h2>
+    <form method="POST">
+        {% set feature_explanations = {
+            "pathDomainRatio": "Ratio of URL path length to domain length",
+            "domain_token_count": "Count of words separated by '-' in domain",
+            "domainUrlRatio": "Domain length as a fraction of entire URL",
+            "SymbolCount_Domain": "Total number of special characters in domain",
+            "LongestPathTokenLength": "Length of longest word in URL path",
+            "domainlength": "Number of characters in the domain",
+            "tld": "Top-Level Domain type (.com=0, .org=1, etc.)",
+            "NumberofDotsinURL": "Number of dots (.) in the full URL",
+            "argDomanRatio": "Similarity score between URL arguments and domain",
+            "pathurlRatio": "Proportion of path compared to URL",
+            "host_letter_count": "Count of alphabet letters in domain",
+            "delimeter_path": "Number of symbols (e.g., '/', '-', '=') in path",
+            "pathLength": "Total number of characters in path",
+            "Entropy_Domain": "Randomness score of domain name (entropy)",
+            "urlLen": "Total number of characters in full URL",
+            "subDirLen": "Number of subdirectories in the URL path",
+            "ldl_url": "Length of the longest token in URL",
+            "CharacterContinuityRate": "Rate of repeating characters",
+            "longdomaintokenlen": "Length of longest word in domain",
+            "SymbolCount_Directoryname": "Number of special characters in directory names"
+        } %}
+
+        {% set feature_labels = {
+            "pathDomainRatio": "Path-to-Domain Ratio",
+            "domain_token_count": "Words in Domain",
+            "domainUrlRatio": "Domain/URL Ratio",
+            "SymbolCount_Domain": "Symbols in Domain",
+            "LongestPathTokenLength": "Longest Word in Path",
+            "domainlength": "Domain Length",
+            "tld": "Top-Level Domain (TLD)",
+            "NumberofDotsinURL": "Dots in URL",
+            "argDomanRatio": "Argument/Domain Similarity",
+            "pathurlRatio": "Path/URL Ratio",
+            "host_letter_count": "Letters in Domain",
+            "delimeter_path": "Delimiters in Path",
+            "pathLength": "Path Length",
+            "Entropy_Domain": "Domain Entropy",
+            "urlLen": "URL Length",
+            "subDirLen": "Subdirectory Count",
+            "ldl_url": "Longest URL Token",
+            "CharacterContinuityRate": "Character Repetition Rate",
+            "longdomaintokenlen": "Longest Domain Word",
+            "SymbolCount_Directoryname": "Symbols in Directory"
+        } %}
+
+        {% for feature in features %}
+        <div class="form-group">
+            <label for="{{ feature }}">{{ feature_labels[feature] if feature in feature_labels else feature }}</label>
+            <small>{{ feature_explanations[feature] if feature in feature_explanations else '' }}</small>
+            <input type="number" step="any" name="{{ feature }}" id="{{ feature }}" required>
+        </div>
+        {% endfor %}
+
+        <input type="submit" value="Predict">
+
+        {% if prediction %}
+        <div class="result
+            {% if 'Error' in prediction %}error
+            {% elif 'Phishing' in prediction %}phishing
+            {% else %}safe
+            {% endif %}">
+            <strong>Result:</strong> {{ prediction }}
+        </div>
+        {% endif %}
+    </form>
+</div>
+</body>
+</html>
