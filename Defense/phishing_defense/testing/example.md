@@ -38,7 +38,7 @@
 
 **Subdirectory Length:** 40
 
-**Longest URL Token Length:** 31
+**Longest URL Token Length:** 0
 
 **Character Continuity Rate:** 0.55
 

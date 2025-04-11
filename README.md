@@ -7,14 +7,14 @@ DDOS Defense Model:
 - Frontend: Flask web application
   - A Flask web application for DDoS detection
   - logging of auto-defense activities
-Machine Learning:
+- Machine Learning:
   - ML models comprising Random Forest and SVM for DDoS detection
   - Random Forest and SVM models for DDoS detection
   - Evaluation metrics and confusion matrix for model performance
-Testcase Generation:
+- Testcase Generation:
   - Test cases for DDoS detection
   - A dataset of DDoS attack and normal traffic data
-Usage:
+- Usage:
   - Instructions for running the Flask app
   - Instructions for using the trained models
 
@@ -22,13 +22,13 @@ Usage:
 Phishing Defense Model:
 - Frontend: Flask web application
   - A Flask web application for Phishing detection
-Machine Learning:
+- Machine Learning:
   - ML models comprising Random Forest and SVM for Phishing detection
   - Random Forest and SVM models for Phishing detection
   - Evaluation metrics and confusion matrix for model performance
-Example Safe URL:
+- Example Safe URL:
   - Example of a safe URL with detailed analysis
-Usage:
+- Usage:
   - Instructions for running the Flask app
   - Instructions for using the trained models
 ---
