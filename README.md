@@ -1,4 +1,4 @@
-# Cyber Threat Defense Suite
+# Cyber Threat Defense
 
 A full-stack system to detect and defend against phishing websites and DDoS network attacks using machine learning techniques.
 
@@ -52,3 +52,6 @@ Defense/
 │   └── testing/            # Phishing test cases
 ```
 
+- DDOS Defense Testing:
+  - Use testing_ddos.py to create the test cases for DDoS detection. 
+  The test cases are generated based on the dataset in the data folder.
