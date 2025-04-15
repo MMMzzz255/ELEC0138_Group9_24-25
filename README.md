@@ -10,9 +10,10 @@ These tools are **strictly for authorized security testing, academic research, o
 A toolkit demonstrating SYN/UDP flood and HTTP slowloris attacks using `hping3` and `slowhttptest`.  
 
 ### Components:  
-**Frontend:**:  
-- Fake login page mimicking a government transport portal (login.html).
-- Redirects to a legitimate site post-credential capture to evade detection.  
+**Tool Setup**:  
+- `hping3`: Generates high-volume SYN/UDP flood attacks.  
+- `slowhttptest`: Executes slow HTTP requests to exhaust server resources.  
+- Target server: Simple Python HTTP server for attack validation. 
 
 **Attack Execution**:  
 1. **SYN Flood**:  
