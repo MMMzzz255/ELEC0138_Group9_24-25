@@ -44,7 +44,7 @@ A Flask-based mock phishing page to demonstrate credential harvesting.
 - Redirects to a legitimate site post-credential capture to evade detection. 
 
 
-**Attack Logic:**:  
+**Attack Logic**:  
 - Collects 8-digit employee IDs and access codes via POST requests.
 - Validates input format (strict 8-digit ID check) to mimic real phishing.
 - Stores stolen credentials in captured_creds.txt.
