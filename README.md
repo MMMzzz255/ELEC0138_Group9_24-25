@@ -1,3 +1,36 @@
+# Cyber Attack Simulation  
+A practical demonstration of DDoS and phishing attack methodologies for educational purposes.  
+
+**⚠️ Disclaimer**:  
+These tools are **strictly for authorized security testing, academic research, or defensive training**. Unauthorized use is illegal and unethical.  
+
+---
+
+## DDoS Attack Simulation  
+A toolkit demonstrating SYN/UDP flood and HTTP slowloris attacks using `hping3` and `slowhttptest`.  
+
+### Components:  
+**Tool Setup**:  
+- `hping3`: Generates high-volume SYN/UDP flood attacks.  
+- `slowhttptest`: Executes slow HTTP requests to exhaust server resources.  
+- Target server: Simple Python HTTP server for attack validation.  
+
+**Attack Execution**:  
+1. **SYN Flood**:  
+   ```bash  
+   sudo hping3 -S -p 8000 --flood <TARGET_IP>  # Replace <TARGET_IP>
+  
+
+
+
+
+
+
+
+
+
+
+
 # Cyber Threat Defense
 
 A full-stack system to detect and defend against phishing websites and DDoS network attacks using machine learning techniques.
