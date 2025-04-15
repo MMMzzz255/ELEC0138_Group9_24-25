@@ -15,7 +15,7 @@ def login():
         employee_id = request.form.get("employee_id")
         access_code = request.form.get("access_code")
 
-        # 严格验证逻辑
+        # Strict validation logic
         if not employee_id or not employee_id.isdigit() or len(employee_id) != 8:
             error = "Please enter a valid 8-digit ID"
         else:
@@ -27,4 +27,4 @@ def login():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8888, debug=True)  # 开启调试模式
+    app.run(host='0.0.0.0', port=8888, debug=True)  # Enable debug mode
