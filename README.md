@@ -10,6 +10,33 @@ These tools are **strictly for authorized security testing, academic research, o
 A toolkit demonstrating SYN/UDP flood and HTTP slowloris attacks using `hping3` and `slowhttptest`.  
 
 ### Components:  
+**Frontend:**:  
+- Fake login page mimicking a government transport portal (login.html).
+- Redirects to a legitimate site post-credential capture to evade detection.  
+
+**Attack Execution**:  
+1. **SYN Flood**:  
+   ```bash  
+   sudo hping3 -S -p 8000 --flood <TARGET_IP>  # Replace <TARGET_IP>
+2. **UDP Flood**:
+   ```bash  
+   sudo hping3 --udp --flood -p 8000 <TARGET_IP>
+3. **HTTP Slowloris**:
+    ```bash  
+   slowhttptest -c 5000 -H -i 5 -r 500 -t GET -u http://<TARGET_IP>:8000 -x 24 -p 10
+ ### Validation:
+- Network Traffic: Use Wireshark with filter port 8000 to observe attack patterns.
+- Server Load: Run top on the target to monitor CPU/memory spikes.
+- Logs: Check Python server logs for connection errors or timeouts.
+ ### Usage:
+ - Install tools (Kali Linux).
+- Start target server (Ubuntu VM)
+- Execute attack commands (replace <TARGET_IP> with the server's IP).
+
+## Phishing Attack Simulation
+A Flask-based mock phishing page to demonstrate credential harvesting.
+
+### Components:  
 **Tool Setup**:  
 - `hping3`: Generates high-volume SYN/UDP flood attacks.  
 - `slowhttptest`: Executes slow HTTP requests to exhaust server resources.  
@@ -33,6 +60,8 @@ A toolkit demonstrating SYN/UDP flood and HTTP slowloris attacks using `hping3` 
  - Install tools (Kali Linux).
 - Start target server (Ubuntu VM)
 - Execute attack commands (replace <TARGET_IP> with the server's IP).
+
+
   
 
   
