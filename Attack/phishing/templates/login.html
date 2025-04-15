@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container mt-3">
-    <!-- 错误提示栏 -->
+    <!-- Error message bar -->
     {% if error %}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <i class="bi bi-exclamation-triangle-fill"></i>
@@ -18,7 +18,7 @@
                     <h4 class="text-center">Secure Access Portal</h4>
                 </div>
                 <div class="card-body">
-                    <form method="post" novalidate>  <!-- 禁用HTML5验证 -->
+                    <form method="post" novalidate>  <!-- Disable HTML5 validation -->
                         <div class="mb-3">
                             <label class="form-label">Employee ID</label>
                             <input type="text"
