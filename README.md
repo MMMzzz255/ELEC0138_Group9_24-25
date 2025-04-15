@@ -53,23 +53,6 @@ A Flask-based mock phishing page to demonstrate credential harvesting.
 - Launch the phishing server;
 - Access http://localhost:8888/login to trigger the phishing page.
 
-
-
-
-  
-
-  
-
-
-
-
-
-
-
-
-
-
-
 # Cyber Threat Defense
 
 A full-stack system to detect and defend against phishing websites and DDoS network attacks using machine learning techniques.
@@ -124,6 +107,17 @@ Defense/
 │   └── testing/            # Phishing test cases
 ```
 
+Testing
 - DDOS Defense Testing:
   - Use testing_ddos.py to create the test cases for DDoS detection. 
   The test cases are generated based on the dataset in the data folder.
+- Phishing Defense Testing:
+  - Testcase is given in the testing folder (exmaple.md)
+
+- Result
+  - Result of the model are in the result folder it can be used to compare the performance of the SVM and Random Forest model.
+
+- Retrain Model 
+  - If you wish to retrain the model, you can use the training_ddos.py file but you will need to download the 
+  dataset (CIC-DDoS2019) and place the dataset in data.py.
+  Files including the preprocess python file and the training python file are included in the project folder.
