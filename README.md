@@ -27,10 +27,12 @@ A toolkit demonstrating SYN/UDP flood and HTTP slowloris attacks using `hping3` 
    slowhttptest -c 5000 -H -i 5 -r 500 -t GET -u http://<TARGET_IP>:8000 -x 24 -p 10
  ### Validation:
 - Network Traffic: Use Wireshark with filter port 8000 to observe attack patterns.
-
 - Server Load: Run top on the target to monitor CPU/memory spikes.
-
 - Logs: Check Python server logs for connection errors or timeouts.
+ ### Usage:
+ - Install tools (Kali Linux).
+- Start target server (Ubuntu VM)
+- Execute attack commands (replace <TARGET_IP> with the server's IP).
   
 
   
