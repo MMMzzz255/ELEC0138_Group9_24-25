@@ -40,18 +40,16 @@ A toolkit demonstrating SYN/UDP flood and HTTP slowloris attacks using `hping3` 
 A Flask-based mock phishing page to demonstrate credential harvesting.
 
 ### Components:  
-**Frontend:**:  
+**Frontend:**:
 - Fake login page mimicking a government transport portal (login.html). 
-- Redirects to a legitimate site post-credential capture to evade detection. 
-
-
+- Redirects to a legitimate site post-credential capture to evade detection.
 **Attack Logic**:  
 - Collects 8-digit employee IDs and access codes via POST requests.
 - Validates input format (strict 8-digit ID check) to mimic real phishing.
 - Stores stolen credentials in captured_creds.txt.
  ### Usage:
- - Install dependencies;
-- Launch the phishing server;
+- Install dependencies
+- Launch the phishing server
 - Access http://localhost:8888/login to trigger the phishing page.
 
 # Cyber Threat Defense
@@ -115,10 +113,10 @@ Testing
 - Phishing Defense Testing:
   - Testcase is given in the testing folder (exmaple.md)
 
-- Result
+Result
   - Result of the model are in the result folder it can be used to compare the performance of the SVM and Random Forest model.
 
-- Retrain Model 
+Retrain Model 
   - If you wish to retrain the model, you can use the training_ddos.py file but you will need to download the 
   dataset (CIC-DDoS2019) and place the dataset in data.py.
   Files including the preprocess python file and the training python file are included in the project folder.
