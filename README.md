@@ -40,7 +40,7 @@ A toolkit demonstrating SYN/UDP flood and HTTP slowloris attacks using `hping3` 
 A Flask-based mock phishing page to demonstrate credential harvesting.
 
 ### Components:  
-**Frontend:**:
+**Frontend**:
 - Fake login page mimicking a government transport portal (login.html). 
 - Redirects to a legitimate site post-credential capture to evade detection.
 **Attack Logic**:  
