@@ -49,7 +49,7 @@ A Flask-based mock phishing page to demonstrate credential harvesting.
 - Stores stolen credentials in captured_creds.txt.
  ### Usage:
 - Install dependencies
-- Launch the phishing server
+- Launch the phishing server phishing_attack.py
 - Access http://localhost:8888/login to trigger the phishing page.
 
 # Cyber Threat Defense
