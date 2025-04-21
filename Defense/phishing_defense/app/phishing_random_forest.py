@@ -175,47 +175,23 @@ def save_metrics(y_true, y_pred, filename="../result/metrics_rf.csv"):
 
 
 def main():
-    # Load and clean the data
     df = load_and_clean_data("../data/phishing_data.csv")
-
-    # Encode the target variable and split the dataset
     X, y = encode_target_and_split(df)
-
-    # Handle extreme values
     X = handle_extreme_values(X)
-
-    # Impute full dataset
     X_full_imputed, y_full, initial_imputer = impute_missing_values(X, y)
-
-    # Get top features using full data
     top_feature_names = get_top_features(X_full_imputed, y_full)
-
-    # Extract and impute only top features
     X_top_imputed, final_imputer = extract_and_impute_top_features(X[top_feature_names], top_feature_names)
-
-    # Align labels again
     y_top = y.loc[X_top_imputed.index]
-
-    # Train-test split
     X_train, X_test, y_train, y_test = train_test_split(X_top_imputed, y_top, test_size=0.2, random_state=42)
-
-    # Train Random Forest
     rf_model = train_random_forest(X_train, y_train)
-
-    # Evaluate and save confusion matrix and metrics
     y_pred = rf_model.predict(X_test)
     cm = confusion_matrix(y_test, y_pred)
     print("Confusion Matrix:\n", cm)
     print("\nClassification Report:\n", classification_report(y_test, y_pred))
     save_confusion_matrix(cm, labels=["Benign", "Phishing"])
     save_metrics(y_test, y_pred)
-
-    # Save model and preprocessing artifacts
     save_artifacts(rf_model, final_imputer, top_feature_names)
-
-    # Save cleaned and encoded top feature dataset
     save_encoded_dataset(X_top_imputed, y_top)
-
 
 if __name__ == "__main__":
     main()

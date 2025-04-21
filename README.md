@@ -1,7 +1,7 @@
 # Cyber Attack Simulation  
 A practical demonstration of DDoS and phishing attack methodologies for educational purposes.  
 
-**⚠️ Disclaimer**:  
+**Disclaimer**:  
 These tools are **strictly for authorized security testing, academic research, or defensive training**. Unauthorized use is illegal and unethical.  
 
 ---
@@ -57,7 +57,7 @@ A Flask-based mock phishing page to demonstrate credential harvesting.
 A full-stack system to detect and defend against phishing websites and DDoS network attacks using machine learning techniques.
 
 This repository includes:
-DDOS Defense Model:
+DDoS Defense Model:
 - Frontend: Flask web application
   - A Flask web application for DDoS detection
   - logging of auto-defense activities
@@ -106,17 +106,38 @@ Defense/
 │   └── testing/            # Phishing test cases
 ```
 
+Running the Project
+- DDoS Defense:
+  - Navigate to the ddos_defense/app directory.
+  - Run the Flask app using `python ddos_defense_app`.
+  - Upload a csv file for DDoS detection from /testing or other test file.
+  - The app will process the file and display the results.
+  - defense_log.txt will log the auto-defense activities.
+- Phishing Defense:
+  - Navigate to the phishing_defense/app directory.
+  - Run the Flask app using `python phishing_defense_app`.
+  - Upload the web info from /testing or other testcase.
+  - The app will process the file and display the results.
+
 Testing
-- DDOS Defense Testing:
-  - Use testing_ddos.py to create the test cases for DDoS detection. 
-  The test cases are generated based on the dataset in the data folder.
+- DDoS Defense Testing:
+  - Use testing_ddos.py or testing_safe_ddos.py to create the test cases for DDoS detection. 
+  - The test cases are generated based on the dataset in the data folder.
+  - testing_ddos.py: Randomly generated 10% test cases are used to test the model.
+  - testing_safe_ddos.py: Randomly generated 10% non-attack test cases are used to test the model.
 - Phishing Defense Testing:
   - Testcase is given in the testing folder (exmaple.md)
 
 Result
   - Result of the model are in the result folder it can be used to compare the performance of the SVM and Random Forest model.
+  - The result includes the confusion matrix and the evaluation metrics of the model.
+
+Switching Model
+  - The model can be switched by changing the model name in the ddos_defense_app.py and phishing_defense_app.py file.
+  - The trained model is given in the model folder in the ddos_defense and phishing_defense folder.
+  - The model can be changed to any other model by changing the model name in the ddos_defense_app.py and phishing_defense_app.py file.
 
 Retrain Model 
-  - If you wish to retrain the model, you can use the training_ddos.py file but you will need to download the 
+  - If you wish to retrain the model, you can use the training_ddos.py file by downloading the 
   dataset (CIC-DDoS2019) and place the dataset in data.py.
   Files including the preprocess python file and the training python file are included in the project folder.
