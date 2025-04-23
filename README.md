@@ -41,7 +41,7 @@ A Flask-based mock phishing page to demonstrate credential harvesting.
 
 ### Components:  
 **Frontend**:
-- Fake login page mimicking a government transport portal (login.html).[1]
+- Fake login page mimicking a government transport portal (login.html).
 - Redirects to a legitimate site post-credential capture to evade detection.
   
 **Attack Logic**:  
@@ -142,6 +142,5 @@ Retrain Model
   - If you wish to retrain the model, you can use the training_ddos.py file by downloading the 
   dataset (CIC-DDoS2019) and place the dataset in data.py.
   Files including the preprocess python file and the training python file are included in the project folder.
-# Reference
-[1] "Road traffic smart traffic traffic light icon", *Iconfinder*, [Online]. Available: https://www.iconfinder.com/icons/4720312/road_traffic_smart_traffic_traffic_light_icon. [Accessed: Apr. 23, 2025].
+
 
