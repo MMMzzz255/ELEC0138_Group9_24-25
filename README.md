@@ -41,7 +41,7 @@ A Flask-based mock phishing page to demonstrate credential harvesting.
 
 ### Components:  
 **Frontend**:
-- Fake login page mimicking a government transport portal (login.html). 
+- Fake login page mimicking a government transport portal (login.html).[1]
 - Redirects to a legitimate site post-credential capture to evade detection.
 **Attack Logic**:  
 - Collects 8-digit employee IDs and access codes via POST requests.
