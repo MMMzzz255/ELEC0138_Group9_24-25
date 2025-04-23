@@ -110,13 +110,13 @@ Defense/
 Running the Project
 - DDoS Defense:
   - Navigate to the ddos_defense/app directory.
-  - Run the Flask app using `python ddos_defense_app`.
+  - Run the Flask app using `python ddos_defense_app.py`.
   - Upload a csv file for DDoS detection from /testing or other test file.
   - The app will process the file and display the results.
   - defense_log.txt will log the auto-defense activities.
 - Phishing Defense:
   - Navigate to the phishing_defense/app directory.
-  - Run the Flask app using `python phishing_defense_app`.
+  - Run the Flask app using `python phishing_defense_app.py`.
   - Upload the web info from /testing or other testcase.
   - The app will process the file and display the results.
 
